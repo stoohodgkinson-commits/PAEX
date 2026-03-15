@@ -1,0 +1,237 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4CACBE5F-3753-4DB7-A120-E78D41FAC859}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PolicyAnalyzer</RootNamespace>
+    <AssemblyName>PolicyAnalyzer</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <ApplicationIcon>PolicyAnalyzer.ico</ApplicationIcon>
+    <StartupObject>PolicyAnalyzer.Program</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Office.Interop.Excel" />
+    <Reference Include="System">
+      <HintPath>..\..\tools\dnSpy-net-win64\bin\System.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core">
+      <HintPath>..\..\tools\dnSpy-net-win64\bin\System.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AuditPolText.cs" />
+    <Compile Include="CseViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CseViewer.Designer.cs">
+      <DependentUpon>CseViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="eInSetResult_t.cs" />
+    <Compile Include="ExcelColumnName.cs" />
+    <Compile Include="ExcelWriter.cs" />
+    <Compile Include="FindDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FindDlg.Designer.cs">
+      <DependentUpon>FindDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Globals.cs" />
+    <Compile Include="GPLookup\CatInfo_t.cs" />
+    <Compile Include="GPLookup\CatPathInfo_t.cs" />
+    <Compile Include="GPLookup\GPLookup_t.cs" />
+    <Compile Include="GPLookup\PolInfo_t.cs" />
+    <Compile Include="GPLookup\PolLocation_t.cs" />
+    <Compile Include="GPLookup\PolSettingChoice_t.cs" />
+    <Compile Include="GPLookup\SecSettingsDetails_t.cs" />
+    <Compile Include="GPLookup\WSecEdit.cs" />
+    <Compile Include="GpoPicker3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GpoPicker3.Designer.cs">
+      <DependentUpon>GpoPicker3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LviTagComparer.cs" />
+    <Compile Include="Microsoft\Office\Interop\Excel\AppEvents.cs" />
+    <Compile Include="Microsoft\Office\Interop\Excel\AppEvents_Event.cs" />
+    <Compile Include="Microsoft\Office\Interop\Excel\Application.cs" />
+    <Compile Include="Microsoft\Office\Interop\Excel\AutoFilter.cs" />
+    <Compile Include="Microsoft\Office\Interop\Excel\Border.cs" />
+    <Compile Include="Microsoft\Office\Interop\Excel\Borders.cs" />
+    <Compile Include="Microsoft\Office\Interop\Excel\Connections.cs" />
+    <Compile Include="Microsoft\Office\Interop\Excel\Constants.cs" />
+    <Compile Include="Microsoft\Office\Interop\Excel\DocEvents.cs" />
+    <Compile Include="Microsoft\Office\Interop\Excel\DocEvents_Event.cs" />
+    <Compile Include="Microsoft\Office\Interop\Excel\Font.cs" />
+    <Compile Include="Microsoft\Office\Interop\Excel\Interior.cs" />
+    <Compile Include="Microsoft\Office\Interop\Excel\QueryTable.cs" />
+    <Compile Include="Microsoft\Office\Interop\Excel\QueryTables.cs" />
+    <Compile Include="Microsoft\Office\Interop\Excel\Range.cs" />
+    <Compile Include="Microsoft\Office\Interop\Excel\RefreshEvents.cs" />
+    <Compile Include="Microsoft\Office\Interop\Excel\RefreshEvents_Event.cs" />
+    <Compile Include="Microsoft\Office\Interop\Excel\Sheets.cs" />
+    <Compile Include="Microsoft\Office\Interop\Excel\Sort.cs" />
+    <Compile Include="Microsoft\Office\Interop\Excel\SortField.cs" />
+    <Compile Include="Microsoft\Office\Interop\Excel\SortFields.cs" />
+    <Compile Include="Microsoft\Office\Interop\Excel\Window.cs" />
+    <Compile Include="Microsoft\Office\Interop\Excel\Workbook.cs" />
+    <Compile Include="Microsoft\Office\Interop\Excel\WorkbookConnection.cs" />
+    <Compile Include="Microsoft\Office\Interop\Excel\WorkbookEvents.cs" />
+    <Compile Include="Microsoft\Office\Interop\Excel\WorkbookEvents_Event.cs" />
+    <Compile Include="Microsoft\Office\Interop\Excel\Workbooks.cs" />
+    <Compile Include="Microsoft\Office\Interop\Excel\Worksheet.cs" />
+    <Compile Include="Microsoft\Office\Interop\Excel\XlAutoFilterOperator.cs" />
+    <Compile Include="Microsoft\Office\Interop\Excel\XlBordersIndex.cs" />
+    <Compile Include="Microsoft\Office\Interop\Excel\XlBorderWeight.cs" />
+    <Compile Include="Microsoft\Office\Interop\Excel\XlCellInsertionMode.cs" />
+    <Compile Include="Microsoft\Office\Interop\Excel\XlLineStyle.cs" />
+    <Compile Include="Microsoft\Office\Interop\Excel\XlLookAt.cs" />
+    <Compile Include="Microsoft\Office\Interop\Excel\XlRangeValueDataType.cs" />
+    <Compile Include="Microsoft\Office\Interop\Excel\XlSaveAsAccessMode.cs" />
+    <Compile Include="Microsoft\Office\Interop\Excel\XlSaveConflictResolution.cs" />
+    <Compile Include="Microsoft\Office\Interop\Excel\XlSearchOrder.cs" />
+    <Compile Include="Microsoft\Office\Interop\Excel\XlSortMethod.cs" />
+    <Compile Include="Microsoft\Office\Interop\Excel\XlTextParsingType.cs" />
+    <Compile Include="Microsoft\Office\Interop\Excel\XlTextQualifier.cs" />
+    <Compile Include="Microsoft\Office\Interop\Excel\XlVAlign.cs" />
+    <Compile Include="Microsoft\Office\Interop\Excel\XlYesNoGuess.cs" />
+    <Compile Include="Microsoft\Office\Interop\Excel\_Application.cs" />
+    <Compile Include="Microsoft\Office\Interop\Excel\_QueryTable.cs" />
+    <Compile Include="Microsoft\Office\Interop\Excel\_Workbook.cs" />
+    <Compile Include="Microsoft\Office\Interop\Excel\_Worksheet.cs" />
+    <Compile Include="Microsoft\WindowsAPICodePack\Dialogs\FileOpenDialogRCW.cs" />
+    <Compile Include="Microsoft\WindowsAPICodePack\Dialogs\IFileOpenDialog.cs" />
+    <Compile Include="Microsoft\WindowsAPICodePack\Dialogs\NativeCommonFileDialog.cs" />
+    <Compile Include="Microsoft\WindowsAPICodePack\Dialogs\NativeFileOpenDialog.cs" />
+    <Compile Include="Microsoft\WindowsAPICodePack\Shell\AccessModes.cs" />
+    <Compile Include="Microsoft\WindowsAPICodePack\Shell\FileOpenOptions.cs" />
+    <Compile Include="Microsoft\WindowsAPICodePack\Shell\FilterSpec.cs" />
+    <Compile Include="Microsoft\WindowsAPICodePack\Shell\IFileDialog.cs" />
+    <Compile Include="Microsoft\WindowsAPICodePack\Shell\IModalWindow.cs" />
+    <Compile Include="Microsoft\WindowsAPICodePack\Shell\IShellItem.cs" />
+    <Compile Include="Microsoft\WindowsAPICodePack\Shell\ShellCLSIDGuid.cs" />
+    <Compile Include="Microsoft\WindowsAPICodePack\Shell\ShellIIDGuid.cs" />
+    <Compile Include="Microsoft\WindowsAPICodePack\Shell\ShellNativeMethods.cs" />
+    <Compile Include="Microsoft\WindowsAPICodePack\Shell\SICHINTF.cs" />
+    <Compile Include="MS\WindowsAPICodePack\Internal\CoreErrorHelper.cs" />
+    <Compile Include="MS\WindowsAPICodePack\Internal\HResult.cs" />
+    <Compile Include="MyRichTextBox.cs" />
+    <Compile Include="NameAndPolicyRules_t.cs" />
+    <Compile Include="PolicyAnalyzerDataFolder.cs" />
+    <Compile Include="PolicyAnalyzerMain2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PolicyAnalyzerMain2.Designer.cs">
+      <DependentUpon>PolicyAnalyzerMain2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PolicyCollection.cs" />
+    <Compile Include="PolicyFileImporter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PolicyFileImporter.Designer.cs">
+      <DependentUpon>PolicyFileImporter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PolicyItemCollection_t.cs" />
+    <Compile Include="PolicyItemInContext_t.cs" />
+    <Compile Include="PolicyPath_t.cs" />
+    <Compile Include="PolicyRules.cs" />
+    <Compile Include="PolicyViewer3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PolicyViewer3.Designer.cs">
+      <DependentUpon>PolicyViewer3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProcessRunning.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProcessRunning.Designer.cs">
+      <DependentUpon>ProcessRunning.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <DependentUpon>Settings.settings</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="SharedCode\AdvAuditAuditOptionItem.cs" />
+    <Compile Include="SharedCode\AdvAuditGlobalAuditItem.cs" />
+    <Compile Include="SharedCode\AdvAuditSubcategoryItem.cs" />
+    <Compile Include="SharedCode\BaselineDefs.cs" />
+    <Compile Include="SharedCode\BaselineEvaluator.cs" />
+    <Compile Include="SharedCode\BaselineItem.cs" />
+    <Compile Include="SharedCode\ClientSideExtensionItem.cs" />
+    <Compile Include="SharedCode\ComputerRegistryPolItem.cs" />
+    <Compile Include="SharedCode\DllHandleMap.cs" />
+    <Compile Include="SharedCode\DllResourceStringLookup.cs" />
+    <Compile Include="SharedCode\EffectiveStateSources.cs" />
+    <Compile Include="SharedCode\GpoImportCode.cs" />
+    <Compile Include="SharedCode\InteractiveUserSessionInfo.cs" />
+    <Compile Include="SharedCode\RegistryItemHelper.cs" />
+    <Compile Include="SharedCode\SecFmt.cs" />
+    <Compile Include="SharedCode\SecTemplateFileSecurityItem.cs" />
+    <Compile Include="SharedCode\SecTemplateGroupMembershipItem.cs" />
+    <Compile Include="SharedCode\SecTemplateItem.cs" />
+    <Compile Include="SharedCode\SecTemplatePrivilegeRightsItem.cs" />
+    <Compile Include="SharedCode\SecTemplateRegistryItem.cs" />
+    <Compile Include="SharedCode\SecTemplateRegistryKeysItem.cs" />
+    <Compile Include="SharedCode\SecTemplateServiceGeneralSettingItem.cs" />
+    <Compile Include="SharedCode\SecTemplateSimpleValueItem.cs" />
+    <Compile Include="SharedCode\UserRegistryPolItem.cs" />
+    <Compile Include="SharedCode\UserSessions.cs" />
+    <Compile Include="Utils.cs" />
+    <Compile Include="WindowsFolderPicker\NativeFolderPicker.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="CseViewer.resources" />
+    <EmbeddedResource Include="FindDlg.resources" />
+    <EmbeddedResource Include="GpoPicker3.resources" />
+    <EmbeddedResource Include="MyRichTextBox.resources" />
+    <EmbeddedResource Include="PolicyAnalyzerMain2.resources" />
+    <EmbeddedResource Include="PolicyFileImporter.resources" />
+    <EmbeddedResource Include="PolicyViewer3.resources" />
+    <EmbeddedResource Include="ProcessRunning.resources" />
+    <EmbeddedResource Include="Properties\Resources.resources" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.manifest" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
